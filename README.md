@@ -12,7 +12,7 @@
    ```
 
 1. Check out your `config/config.json` file. You'll need to create a database called `project2_development`
-1. Sequelize is included in the app. You have a `User` model. Run `db:migrate` to create the `Users` table in your database.
+1. Sequelize is included in the app. You have a `User` model. Run `npx sequelize db:migrate` to create the `Users` table in your database.
 1. Run `nodemon` and go to the Homepage: `localhost:3000/`
 
 ![](https://i.imgur.com/uuhrOxQ.png)
