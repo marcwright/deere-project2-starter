@@ -12,29 +12,30 @@
   <body class="boLogin">
     <div class="main">
       <div class="divs" id="headDiv">
-    <h1 class="header" >Cooking Preparation</h1>
+    <h1 class="header" >Cooking Preparations</h1>
+    <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
     <h1 class="header2"><%= user.name %> Profile Page </h1>
   </div>
   <div class="divs" id="centraldiv">
+    <div class="fSet">
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-      Name: <input type="text" name="name" value="<%=user.name%>" /><br />
-      <br />
-      Username:
-      <input type="text" name="username" value="<%=user.username%>" />
-      <br />
-      <br />
-      Password:
-      <input type="text" name="password" value="<%=user.password%>" /><br />
-      <br />
-      <input type="submit" value="Edit Profile" />
-    </form>
-    <br />
-    <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete User" />
-    </form>
+        <label class="etiquetas" for="name">Name:</label>
+        <input class="campos" type="text" name="name" value="<%=user.name%>" />
+        <label class="etiquetas" for="username">Username:</label>
+        <input class="campos" type="text" name="username" value="<%=user.username%>" />
+        <label class="etiquetas" for="username">Password:</label>
+        <input class="campos" type="password" name="password" value="<%=user.password%>" />
+        <br/><br/>
+        <input class="campos" type="submit" value="Edit Profile" />
+     </form>
+     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+         <br/>
+         <input class="campos" type="submit" value="Delete User" />
+         <br/><br/>
+         <a class="normaltag" href="/">Back to Homepage</a>
+      </form>
+    </div>
 
-    <br /><br />
-    <a href="/">Back to Homepage</a>
   </div>
   <div class="divs" id="goodbye">
       <p>Thanks for checking our website :)</p>

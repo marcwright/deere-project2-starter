@@ -19,35 +19,40 @@ router.get("/signup", (req, res) => {
 
 // POST - CREATE NEW USER FROM SIGNUP
 router.post("/signup", (req, res) => {
-  bcrypt.genSalt(10, (err, salt) => {
-    if (err) return res.status(500).json(err);
+    if ( req.body.name === '' || req.body.username === '' || req.body.password === '' ) {
+        res.send('Please, you need to fill all the fields.')
+    }
+    bcrypt.genSalt(10, (err, salt) => {
 
-    bcrypt.hash(req.body.password, salt, (err, hashedPwd) => {
       if (err) return res.status(500).json(err);
-      req.body.password = hashedPwd;
 
-      UserModel.create(req.body)
-        .then((newUser) => {
-          const token = jwt.sign(
-            {
-              username: newUser.username,
-              id: newUser.id,
-            },
-            process.env.JWT_SECRET,
-            {
-              expiresIn: "30 days",
-            }
-          );
-          console.log(token);
-          res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
-          res.redirect(`/users/profile/${newUser.id}`);
-        })
-        .catch((err) => {
-          console.log(err);
-          res.send(`err ${err}`);
-        });
+      bcrypt.hash(req.body.password, salt, (err, hashedPwd) => {
+
+        if (err) return res.status(500).json(err);
+          req.body.password = hashedPwd;
+
+          UserModel.create(req.body)
+          .then((newUser) => {
+            const token = jwt.sign(
+              {
+                username: newUser.username,
+                id: newUser.id,
+              },
+              process.env.JWT_SECRET,
+              {
+                expiresIn: "30 days",
+              }
+            );
+            console.log(token);
+            res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
+            res.redirect(`/users/profile/${newUser.id}`);
+          })
+          .catch((err) => {
+            console.log(err);
+            res.send(`Please, check name, user and password aren't blank. <br>err ${err}`);
+          });
+      });
     });
-  });
 });
 
 // GET LOGIN

@@ -13,47 +13,10 @@
     font-size: 30px;
     color: white;
 }
-
-.tagsCont {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.tags {
+.welmes {
     font-family: 'Tauri', sans-serif;
-    font-size: 25px;
-    background-color: turquoise;
-    color: teal;
-    height: 40px;
-    padding: 10px;
-    margin: 40px;
-    width: 250px;
-    border-style: solid;
-    border-width: 2px;
-}
-
-.fSet {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-}
-
-.etiquetas {
-    font-family: 'Tauri', sans-serif;
-    font-size: 35px;
-    color: teal;
-    padding: 5px;
-}
-
-.campos {
-    font-family: 'Tauri', sans-serif;
-    font-size: 25px;
-    padding: 5px;
-}
-
-#butt {
-    height: 40px;
+    font-size: 15px;
+    color: white;
 }
 
 .main {
@@ -70,16 +33,19 @@
 #headDiv {
     background-image: url("https://cdn.ticbeat.com/src/uploads/2019/03/GettyImages-941858854-810x541.jpg");
     background-position: left bottom;
-    min-height: 200px;
+    min-height: 270px;
     max-height: 220px;
 }
 
 #centraldiv {
     min-height: 600px;
-    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Breakfast-food-Backgrounds-750x460.jpg");
+    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
     
 
@@ -91,3 +57,67 @@
     font-size: 25px;
     color: white;
 }
+
+.tagsCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tags {
+    font-family: 'Tauri', sans-serif;
+    font-size: 25px;
+    background-color: lemonchiffon;
+    color: teal;
+    height: 40px;
+    padding: 10px;
+    margin: 40px;
+    width: 250px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.normaltag {
+    font-family: 'Tauri', sans-serif;
+    font-size: 25px;
+    color: teal;
+    height: 40px;
+    width: 250px;
+}
+
+.fSet {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    padding: 10px;
+    background-color: lemonchiffon;
+    border-radius: 25px;
+    border: 2px solid teal;
+}
+
+.cameti {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.etiquetas {
+    font-family: 'Tauri', sans-serif;
+    font-size: 35px;
+    color: teal;
+    padding: 5px;
+}
+
+.campos {
+    font-family: 'Tauri', sans-serif;
+    font-size: 25px;
+    padding: 5px;
+}
+
+input[type=submit] {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    width: 10em;  
+    height: 5em;
+}
+

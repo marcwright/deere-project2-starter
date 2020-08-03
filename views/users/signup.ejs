@@ -12,22 +12,28 @@
     <div class="main">
       <div class="divs" id="headDiv">
         <h1 class="header">Cooking Preparations</h1>
+        <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
         <h1 class="header2">SignUp</h1>
       </div>
       <div class="divs" id="centraldiv">
     <form action="/auth/signup" method="POST">
-      <fieldset>
+        <div class="fSet">
+          <div class=cameti>
           <label class="etiquetas" for="name">Name:</label>
-          <input class="campos" type="text" id="name" name="name" /><br />
-          <br />
+          <input class="campos" type="text" id="name" name="name" />
+          </div>
+          <div class=cameti>
           <label class="etiquetas" for="username">Username:</label>
-          <input class="campos" type="text" id="username" name="username" /> <br />
-          <br />
+          <input class="campos" type="text" id="username" name="username" /> 
+          </div>
+          <div class=cameti>
           <label class="etiquetas" for="password">Password:</label>
-          <input class="campos" type="text" id="password" name="password" /><br />
-          <br />
-          <input id="butt" class="campos" type="submit" value="SignUp"/>
-      </fieldset>
+          <input class="campos" type="password" id="password" name="password" />
+          </div>
+          <div class=cameti>
+            <input id="butt" class="campos" type="submit" value="SignUp"/>
+          </div>
+      </div>
     </form>
   </div>
   <div class="divs" id="goodbye">

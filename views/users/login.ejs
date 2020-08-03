@@ -13,16 +13,21 @@
     <div class="main">
       <div class="divs" id="headDiv">
         <h1 class="header">Cooking Preparations</h1>
+        <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
         <h1 class="header2">Login</h1>
       </div>
       <div class="divs" id="centraldiv">
-        <form action="/auth/login" method="POST">
-           Username: <input type="text" name="username" /> <br />
-          <br />
-           Password: <input type="text" name="password" /><br />
-          <br />
-          <input type="submit" value="Login" />
-        </form>
+        <div class="fSet">
+          <form action="/auth/login" method="POST">
+            <label class="etiquetas" for="name">Username:</label>
+             <input class="campos" type="text" name="username" /> <br />
+             <br />
+            <label class="etiquetas" for="name">Password:</label>
+             <input class="campos" type="password" name="password" /><br />
+             <br />
+            <input class="campos" type="submit" value="Login" />
+          </form>
+        </div>
       </div>
       <div class="divs" id="goodbye">
         <p>Thanks for checking our website :)</p>
