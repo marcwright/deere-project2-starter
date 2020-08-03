@@ -4,25 +4,35 @@
 
 .header {
     font-family: 'Lobster', cursive;
-    font-size: 70px;
+    font-size: 60px;
     color: white;
+    height: 1em;
 }
 
 .header2 {
     font-family: 'Tauri', sans-serif;
     font-size: 30px;
     color: white;
+    height: 1em;
 }
+
+.notfound {
+    font-family: 'Tauri', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
 .welmes {
     font-family: 'Tauri', sans-serif;
     font-size: 15px;
     color: white;
+    height: 1em;
 }
 
 .main {
     display: flex;
     flex-direction: column;
-}
+} 
 
 .divs {
     border-style: solid;
@@ -33,11 +43,45 @@
 #headDiv {
     background-image: url("https://cdn.ticbeat.com/src/uploads/2019/03/GettyImages-941858854-810x541.jpg");
     background-position: left bottom;
+    min-height: 260px;
+    max-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+#headDivMain {
+    background-image: url("https://cdn.ticbeat.com/src/uploads/2019/03/GettyImages-941858854-810x541.jpg");
+    background-position: left bottom;
     min-height: 270px;
     max-height: 220px;
+    display: flex;
+}
+
+#mainCentral {
+    min-height: 600px;
+    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: left;    
 }
 
 #centraldiv {
+    min-height: 600px;
+    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    /*
+    align-items: center; 
+    justify-content: center;
+    */
+}
+
+#centraldivcenter {
     min-height: 600px;
     background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
     background-position: center center;
@@ -70,11 +114,17 @@
     background-color: lemonchiffon;
     color: teal;
     height: 40px;
-    padding: 10px;
-    margin: 40px;
-    width: 250px;
+    padding: 5px;
+    margin: 10px;
+    width: 200px;
     border-style: solid;
     border-width: 2px;
+}
+
+.notfoundTag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .normaltag {

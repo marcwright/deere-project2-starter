@@ -20,8 +20,12 @@ router.get("/signup", (req, res) => {
 // POST - CREATE NEW USER FROM SIGNUP
 router.post("/signup", (req, res) => {
     if ( req.body.name === '' || req.body.username === '' || req.body.password === '' ) {
-        res.send('Please, you need to fill all the fields.')
-    }
+        //res.send('Please, you need to fill all the fields.')
+        const message = 'Please, you need to fill all the fields.';
+        res.render("users/signup.ejs", {
+            message: message,
+        });
+    } else {
     bcrypt.genSalt(10, (err, salt) => {
 
       if (err) return res.status(500).json(err);
@@ -45,14 +49,16 @@ router.post("/signup", (req, res) => {
             );
             console.log(token);
             res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
-            res.redirect(`/users/profile/${newUser.id}`);
+            //res.redirect(`/users/profile/${newUser.id}`);
+            res.redirect(`/main/${newUser.id}`);
           })
           .catch((err) => {
             console.log(err);
-            res.send(`Please, check name, user and password aren't blank. <br>err ${err}`);
+            res.send(`err ${err}`);
           });
       });
     });
+  }
 });
 
 // GET LOGIN
@@ -82,11 +88,14 @@ router.post("/login", (req, res) => {
           );
           console.log(token);
           res.cookie("jwt", token); // SEND A NEW COOKIE TO THE BROWSER TO STORE TOKEN
-          res.redirect(`/users/profile/${foundUser.id}`);
+          //res.redirect(`/users/profile/${foundUser.id}`);
+          res.redirect(`/main/${foundUser.id}`);
         } else {
           return res.sendStatus(400);
         }
       });
+    } else {
+      res.render("users/notfound.ejs");
     }
   });
 });

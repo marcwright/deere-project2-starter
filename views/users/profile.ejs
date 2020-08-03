@@ -14,9 +14,9 @@
       <div class="divs" id="headDiv">
     <h1 class="header" >Cooking Preparations</h1>
     <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
-    <h1 class="header2"><%= user.name %> Profile Page </h1>
+    <h1 class="header2"><%= user.name.toUpperCase(); %> Profile Page </h1>
   </div>
-  <div class="divs" id="centraldiv">
+  <div class="divs" id="centraldivcenter">
     <div class="fSet">
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
         <label class="etiquetas" for="name">Name:</label>

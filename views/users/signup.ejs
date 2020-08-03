@@ -15,9 +15,12 @@
         <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
         <h1 class="header2">SignUp</h1>
       </div>
-      <div class="divs" id="centraldiv">
+      <div class="divs" id="centraldivcenter">
     <form action="/auth/signup" method="POST">
         <div class="fSet">
+          <div class=cameti>
+            <%= typeof(message) !== 'undefined' ? message : '' %>
+          </div>
           <div class=cameti>
           <label class="etiquetas" for="name">Name:</label>
           <input class="campos" type="text" id="name" name="name" />
