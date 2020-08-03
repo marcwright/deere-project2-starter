@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Profile Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations Profile Page</title>
   </head>
 
-  <body>
-    <h1>Welcome to <%= user.name %>'s Profile Page</h1>
-
+  <body class="boLogin">
+    <div class="main">
+      <div class="divs" id="headDiv">
+    <h1 class="header" >Cooking Preparation</h1>
+    <h1 class="header2"><%= user.name %> Profile Page </h1>
+  </div>
+  <div class="divs" id="centraldiv">
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
       Name: <input type="text" name="name" value="<%=user.name%>" /><br />
       <br />
@@ -28,5 +35,10 @@
 
     <br /><br />
     <a href="/">Back to Homepage</a>
+  </div>
+  <div class="divs" id="goodbye">
+      <p>Thanks for checking our website :)</p>
+  </div>
+</div>
   </body>
 </html>
