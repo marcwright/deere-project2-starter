@@ -2,21 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <title>Cooking Preparations</title>
     <link rel="stylesheet" href="/css/app.css" />
   </head>
-
-  <body>
-    <h1>Sign Up</h1>
-
+  <body  class="boLogin">
+    <div class="main">
+      <div class="divs" id="headDiv">
+        <h1 class="header">Cooking Preparations</h1>
+        <h1 class="header2">SignUp</h1>
+      </div>
+      <div class="divs" id="centraldiv">
     <form action="/auth/signup" method="POST">
-      Name: <input type="text" name="name" /><br />
-      <br />
-      Username: <input type="text" name="username" /> <br />
-      <br />
-      Password: <input type="text" name="password" /><br />
-      <br />
-      <input type="submit" value="SignUp" />
+      <fieldset>
+          <label class="etiquetas" for="name">Name:</label>
+          <input class="campos" type="text" id="name" name="name" /><br />
+          <br />
+          <label class="etiquetas" for="username">Username:</label>
+          <input class="campos" type="text" id="username" name="username" /> <br />
+          <br />
+          <label class="etiquetas" for="password">Password:</label>
+          <input class="campos" type="text" id="password" name="password" /><br />
+          <br />
+          <input id="butt" class="campos" type="submit" value="SignUp"/>
+      </fieldset>
     </form>
+  </div>
+  <div class="divs" id="goodbye">
+      <p>Thanks for checking our website :)</p>
+  </div>
+</div>
   </body>
 </html>

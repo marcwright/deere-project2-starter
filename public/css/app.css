@@ -1,0 +1,93 @@
+.body {
+    font-family: 'Tauri', sans-serif;
+} 
+
+.header {
+    font-family: 'Lobster', cursive;
+    font-size: 70px;
+    color: white;
+}
+
+.header2 {
+    font-family: 'Tauri', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+.tagsCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tags {
+    font-family: 'Tauri', sans-serif;
+    font-size: 25px;
+    background-color: turquoise;
+    color: teal;
+    height: 40px;
+    padding: 10px;
+    margin: 40px;
+    width: 250px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.fSet {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+.etiquetas {
+    font-family: 'Tauri', sans-serif;
+    font-size: 35px;
+    color: teal;
+    padding: 5px;
+}
+
+.campos {
+    font-family: 'Tauri', sans-serif;
+    font-size: 25px;
+    padding: 5px;
+}
+
+#butt {
+    height: 40px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.divs {
+    border-style: solid;
+    border-width: 1px;
+    min-height: 100px;
+} 
+
+#headDiv {
+    background-image: url("https://cdn.ticbeat.com/src/uploads/2019/03/GettyImages-941858854-810x541.jpg");
+    background-position: left bottom;
+    min-height: 200px;
+    max-height: 220px;
+}
+
+#centraldiv {
+    min-height: 600px;
+    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Breakfast-food-Backgrounds-750x460.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+    
+
+#goodbye {
+    height: 50px;
+    background-image: url("https://cdn.ticbeat.com/src/uploads/2019/03/GettyImages-941858854-810x541.jpg");
+    background-size: 600px auto;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    color: white;
+}
