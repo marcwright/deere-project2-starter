@@ -10,24 +10,23 @@
     <title>Cooking Preparations</title>
   </head>
   <body class="boLogin">
-        <form action="/step/new" method="POST">
+        <form action="/step/<%=recipe.id%>/new" method="POST">
             <div class="setReceta">
               <div class=recItem>
-              <label class="lRecipe" for="name">Name:</label>
-              <input class="fRecipe" type="text" id="name" name="name" />
+                <input class="fRecipe" type="hidden"  id="recipeId" name="recipeId" value="<%=recipe.id%>" />
               </div>
               <div class=recItem>
-              <label class="lRecipe" for="quantity">Quantity:</label>
-              <input class="fRecipe" type="text" id="quantity" name="quantity" /> 
-              </div>
-              <div class=recItem>
-              <label class="lRecipe" for="unit">Unit:</label>
-              <input class="fRecipe" type="text" id="unit" name="unit" />
+              <label class="lRecipe" for="description">Description:</label>
+              <textarea class="fRecipe" id="description" name="description" rows="3" cols="100">
+              </textarea>
               </div>
               <div class=recItem>
                 <input id="butt" class="fRecipe" type="submit" value="Save"/>
               </div>
           </div>
+        </form>
+        <form action="/step/<%=recipe.id; %>?_method=DELETE" method="POST">
+            <input class="button" type="submit" value="DELETE"/>
         </form>
   </body>
 </html>

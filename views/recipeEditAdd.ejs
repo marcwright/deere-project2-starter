@@ -24,14 +24,49 @@
         </div>
      </div>
      <div class="divs" id="divRecipes">
+       <div class="framesCont">
         <nav class="tagsCont">
-          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="400" width="700" style="border:none;"></iframe>
+          <button class="tags" onclick="createIng()">New Ingredient</button>
+          <button class="tags" onclick="createStep()">New Step</button>
           <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Back</a></div>
         </nav>
+        <div class="frames">
+          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="100" width="1000" style="border:none;"></iframe>
+          <% recipe.Ingredients.forEach((ingredient) => { %>
+              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="120" width="1000" style="border:none;"></iframe>            
+          <% }); %>
+          <% recipe.Steps.forEach((step) => { %>
+            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="120" width="1000" style="border:none;"></iframe>            
+          <% }); %>
+        </div>
+      </div>
      </div>
       <div class="divs" id="goodbye"> 
            <p>Thanks for checking our website :)</p>
       </div>
     </div>
+    <script>
+      function createIng() {
+        let myFrame = document.createElement('iframe');
+        const myDiv =  document.querySelector('.frames');
+        myFrame.setAttribute('src', '/ingre/<%=recipe.id%>/new/');
+        myFrame.setAttribute('height', '120');
+        myFrame.setAttribute('width', '1000');
+        myFrame.setAttribute('style', 'border:none;');
+
+        myDiv.appendChild(myFrame); 
+      }
+
+      function createStep() {
+        let myFrame = document.createElement('iframe');
+        const myDiv =  document.querySelector('.frames');
+        myFrame.setAttribute('src', '/step/<%=recipe.id%>/new/');
+        myFrame.setAttribute('height', '120');
+        myFrame.setAttribute('width', '1000');
+        myFrame.setAttribute('style', 'border:none;');
+
+        myDiv.appendChild(myFrame); 
+      }
+    </script> 
   </body>
 </html>

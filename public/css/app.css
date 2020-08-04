@@ -2,6 +2,12 @@
     font-family: 'Tauri', sans-serif;
 } 
 
+.boRecipe {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .header {
     font-family: 'Lobster', cursive;
     font-size: 60px;
@@ -195,7 +201,7 @@
 input[type=submit] {
     font-family: 'Lobster', cursive;
     font-size: 25px;
-    width: 10em;  
+    width: 5em;  
     height: 5em;
 }
 
@@ -259,9 +265,10 @@ input[type=submit] {
 
 .setReceta {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center; 
-    padding: 40px;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 
 .recItem {
@@ -278,4 +285,12 @@ input[type=submit] {
     font-family: 'Tauri', sans-serif;
     font-size: 13px;
     padding: 2px;
+}
+
+
+.framesCont {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    flex-wrap: wrap;
 }

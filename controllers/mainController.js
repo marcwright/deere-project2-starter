@@ -40,9 +40,10 @@ router.get("/:user/recipeEditAdd/:recipe", (req, res) => {
                         { model: Step }
                     ],
        }).then((foundRecipe) => {
+           //console.log(foundRecipe);
             res.render("recipeEditAdd.ejs", {
                 user: userProfile,
-                recipe: foundRecipe,
+                 recipe: foundRecipe,
             });
         });
     });

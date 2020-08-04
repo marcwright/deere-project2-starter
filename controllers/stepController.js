@@ -16,7 +16,7 @@ router.use(express.urlencoded({ extended: true }));
 
  router.get("/:recipe/new", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        res.render("newIngre.ejs", {
+        res.render("newStep.ejs", {
             recipe: foundRecipe
         });
     });
@@ -24,18 +24,18 @@ router.use(express.urlencoded({ extended: true }));
 
 router.post("/:recipe/new", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        Ingredient.create(req.body).then((newIngre) => {
-            res.redirect(`/ingre/${foundRecipe.id}/${newIngre.id}`);
+        Step.create(req.body).then((newStep) => {
+            res.redirect(`/step/${foundRecipe.id}/${newStep.id}`);
         });
     });
 });
 
 router.get("/:recipe/:id", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        Ingredient.findByPk(req.params.id).then((foundIngredient) => {
-            res.render("editIngre.ejs", {
+        Step.findByPk(req.params.id).then((foundStep) => {
+            res.render("editStep.ejs", {
                 recipe: foundRecipe,
-                ingredient: foundIngredient,
+                step: foundStep,
             });
         });
     });
@@ -43,20 +43,20 @@ router.get("/:recipe/:id", (req, res) => {
 
 router.put("/:recipe/:id", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        Ingredient.update(req.body, {
+        Step.update(req.body, {
             where: { id: req.params.id ,
                      recipeId: foundRecipe.id,
                     },
             returning: true,
-        }).then((ingre) => {
-            res.redirect(`/ingre/${foundRecipe.id}/${req.params.id}`);
+        }).then((step) => {
+            res.redirect(`/step/${foundRecipe.id}/${req.params.id}`);
         });
     });
 });
 
 router.delete('/:recipe/:id', (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        Ingredient.destroy({ where: { id: req.params.id } }).then(() => {
+        Step.destroy({ where: { id: req.params.id } }).then(() => {
             // res.redirect(`/recipe/${userProfile.id}`);
             res.send('Deleted Ingredient');
         });

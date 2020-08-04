@@ -10,8 +10,11 @@
     <title>Cooking Preparations</title>
   </head>
   <body class="boLogin">
-        <form action="/ingre/new" method="POST">
+        <form action="/ingre/<%=recipe.id%>/new" method="POST">
             <div class="setReceta">
+              <div class=recItem>
+                <input class="fRecipe" type="hidden" id="recipeId" name="recipeId" value="<%=recipe.id%>"/>
+              </div>
               <div class=recItem>
               <label class="lRecipe" for="name">Name:</label>
               <input class="fRecipe" type="text" id="name" name="name" />
@@ -28,12 +31,6 @@
                 <input id="butt" class="fRecipe" type="submit" value="Save"/>
               </div>
           </div>
-        </form>
-        <form action="/ingre/<%=ingridient.id; %>/edit" method="GET">
-            <input class="button" type="submit" value="EDIT"/>
-        </form>
-        <form action="/ingre/<%=ingridient.id; %>?_method=DELETE" method="POST">
-            <input class="button" type="submit" value="DELETE"/>
         </form>
   </body>
 </html>

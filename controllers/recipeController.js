@@ -30,7 +30,8 @@ router.put("/:user/edit/:recipe", (req, res) => {
             where: { id: req.params.recipe },
             returning: true,
         }).then((recipe) => {
-            res.redirect(`/recipe/${userProfile.id}/edit/${recipe.id}`);
+            //res.redirect(`/recipe/${userProfile.id}/edit/${recipe.id}`);
+            res.redirect(`/recipe/${userProfile.id}/edit/${req.params.recipe}`);
         });
     });
 });

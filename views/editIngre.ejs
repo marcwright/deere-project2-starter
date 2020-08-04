@@ -10,26 +10,29 @@
     <title>Cooking Preparations</title>
   </head>
   <body class="boLogin">
-      <form action="/recipe/<%=user.id;%>/edit/<%=recipe.id%>?_method=PUT" method="POST">
+      <form action="/ingre/<%=recipe.id%>/<%=ingredient.id%>?_method=PUT" method="POST">
           <div class="setReceta">
             <div class=recItem>
+              <input class="fRecipe" type="hidden"  id="recipeId" name="recipeId" value="<%=recipe.id%>" />
+            </div>
+            <div class=recItem>
             <label class="lRecipe" for="name">Name:</label>
-            <input class="fRecipe" type="text" id="name" name="name" value="<%=recipe.name%>" />
+            <input class="fRecipe" type="text" id="name" name="name" value="<%=ingredient.name%>" />
             </div>
             <div class=recItem>
             <label class="lRecipe" for="quantity">Quantity:</label>
-            <input class="fRecipe" type="text" id="quantity" name="quantity"  value="<%=recipe.dificulty%>" /> 
+            <input class="fRecipe" type="text" id="quantity" name="quantity" value="<%=ingredient.quantity%>" /> 
             </div>
             <div class=recItem>
             <label class="lRecipe" for="unit">Unit of Measure:</label>
-            <input class="fRecipe" type="text" id="unit" name="unit" value="<%=recipe.prepTime%>"/>
+            <input class="fRecipe" type="text" id="unit" name="unit" value="<%=ingredient.unit%>"/>
             </div>
             <div class=recItem>
             <input id="butt" class="fRecipe" type="submit" name="" value="Submit Changes" />
           </div>
         </div>
       </form>
-      <form action="/recipe/<%=user.id; %>/edit/<%=recipe.id%>?_method=DELETE" method="POST">
+      <form action="/ingre/<%=recipe.id%>/<%=ingredient.id%>?_method=DELETE" method="POST">
         <input class="fRecipe" type="submit" value="DELETE"/>
       </form>
   </body>

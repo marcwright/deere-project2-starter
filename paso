@@ -37,7 +37,9 @@
             // <textarea id="w3review" name="w3review" rows="4" cols="50">
           }
         </script> 
-
+        <form action="/ingre/<%=recipe.id; %>/edit" method="GET">
+            <input class="button" type="submit" value="EDIT"/>
+        </form>
 
                 <div class="tags"><a href="/ingre/profile/<%=user.id%>">Add Ingredientes</a></div>
         <div class="tags"><a href="/step/profile/<%=user.id%>">Add Steps</a></div>
