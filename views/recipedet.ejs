@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boLogin">
+    <div class="main">
+     <div class="divs" id="headDivMain">
+        <div class="hdivs">
+            <h1 class="header">Cooking Preparations</h1>
+            <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
+        </div>
+        <div class="hdivs" id="proSingOut">
+            <nav class="tagsCont">
+                <div class="tags"><a href="/users/profile/<%=user.id%>">Profile</a></div>
+                <div class="tags"><a href="/auth/logout">Sing Out</a></div>
+            </nav>
+        </div>
+     </div>
+     <div class="divs" id="showOneRecipe">
+        <div class="recipeLists" color="black">
+          <nav>
+            <div class="itemRecetaH">
+              <a class="tags" href="/recipe/<%=user.id%>/edit/<%=recipe.id%>">Start Preparation</a>
+              <a class="tags" href="/recipe/<%=user.id%>/edit/<%=recipe.id%>">Prep History</a>
+            </div>
+            </nav>
+          </div>
+          <div class="recipeDesc" class="item">
+            <div class="item"><h1 class="headerR"><%=recipe.name%></h1></div>
+          </div>
+          <div class="recipeDesc" class="item">
+              <div class="item"><%=recipe.dificulty%></div>
+              <div class="item"><%=recipe.prepTime%></div>
+          </div>
+        <div class="" color="black">
+          <ol class="">
+            <% recipe.Ingredients.forEach((ing) => { %>
+              <il class="recipeInfo">
+                <div class="item"><%=ing.name%></div>
+                <div class="item"><%=ing.quantity%></div>
+                <div class="item"><%=ing.unit%></div>
+              </il>
+            <% }); %>
+            </ol>
+        </div>
+        <div class="recipeSteps" color="black">
+          <ol class="">
+            <% recipe.Steps.forEach((step) => { %>
+              <il class="listaStep">
+                <div class="item"><p><%=step.description%></p></div>
+              </il>
+            <% }); %>
+          </ol>
+        </div>
+      </div>
+      <div class="divs" id="goodbye">
+           <p>Thanks for checking our website :)</p>
+      </div>
+    </div>
+  </body>
+</html>

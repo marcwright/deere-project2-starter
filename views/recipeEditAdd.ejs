@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
@@ -22,13 +23,13 @@
             </nav>
         </div>
      </div>
-     <div class="divs" id="mainCentral">
+     <div class="divs" id="divRecipes">
         <nav class="tagsCont">
-            <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Recipes</a></div>
-            <div class="tags"><a href="/prep/<%=user.id%>">My Preparations</a></div>
+          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="400" width="700" style="border:none;"></iframe>
+          <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Back</a></div>
         </nav>
      </div>
-      <div class="divs" id="goodbye">
+      <div class="divs" id="goodbye"> 
            <p>Thanks for checking our website :)</p>
       </div>
     </div>

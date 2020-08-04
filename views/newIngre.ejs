@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boLogin">
+        <form action="/ingre/new" method="POST">
+            <div class="setReceta">
+              <div class=recItem>
+              <label class="lRecipe" for="name">Name:</label>
+              <input class="fRecipe" type="text" id="name" name="name" />
+              </div>
+              <div class=recItem>
+              <label class="lRecipe" for="quantity">Quantity:</label>
+              <input class="fRecipe" type="text" id="quantity" name="quantity" /> 
+              </div>
+              <div class=recItem>
+              <label class="lRecipe" for="unit">Unit of Measure:</label>
+              <input class="fRecipe" type="text" id="unit" name="unit" />
+              </div>
+              <div class=recItem>
+                <input id="butt" class="fRecipe" type="submit" value="Save"/>
+              </div>
+          </div>
+        </form>
+        <form action="/ingre/<%=ingridient.id; %>/edit" method="GET">
+            <input class="button" type="submit" value="EDIT"/>
+        </form>
+        <form action="/ingre/<%=ingridient.id; %>?_method=DELETE" method="POST">
+            <input class="button" type="submit" value="DELETE"/>
+        </form>
+  </body>
+</html>

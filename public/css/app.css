@@ -16,6 +16,13 @@
     height: 1em;
 }
 
+.headerR {
+    font-family: 'Tauri', sans-serif;
+    font-size: 30px;
+    color: black;
+    height: 1em;
+}
+
 .notfound {
     font-family: 'Tauri', sans-serif;
     font-size: 30px;
@@ -57,41 +64,60 @@
     display: flex;
 }
 
+/* Este es para el main */
 #mainCentral {
     min-height: 600px;
-    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/i/57/64/y3AZ1P.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     align-items: flex-start; 
     justify-content: left;    
-}
+} 
 
 #centraldiv {
     min-height: 600px;
-    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/i/57/64/y3AZ1P.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex;
-    /*
-    align-items: center; 
-    justify-content: center;
-    */
 }
 
+/* Este se usa para el signup */
 #centraldivcenter {
     min-height: 600px;
-    background-image: url("https://www.freepptbackgrounds.net/wp-content/uploads/2020/03/Fresh-Foods-Presentation-Slides.jpg");
+    background-image: url("https://cdn.hipwallpaper.com/i/57/64/y3AZ1P.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     display: flex;
     align-items: center; 
     justify-content: center;
 }
-    
+
+#divRecipes {
+    min-height: 600px;
+    background-image: url("https://cdn.hipwallpaper.com/i/57/64/y3AZ1P.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
+
+#showOneRecipe {
+    min-height: 600px;
+    background-image: url("https://cdn.hipwallpaper.com/i/57/64/y3AZ1P.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+}
 
 #goodbye {
     height: 50px;
@@ -120,6 +146,8 @@
     border-style: solid;
     border-width: 2px;
 }
+
+
 
 .notfoundTag {
     display: flex;
@@ -171,3 +199,83 @@ input[type=submit] {
     height: 5em;
 }
 
+/* Corresponde a los Links de la parte superior de cuando se muestra la receta */
+.recipeLists {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.itemRecetaH {
+    font-family: 'Tauri', sans-serif;
+    font-size: 15px;
+    color: teal;
+    padding: 5px;
+}
+
+.recipeDesc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+}
+
+.recipeInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.listaIngre {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.listaReceta {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item {
+    font-family: 'Tauri', sans-serif;
+    font-size: 18px;
+    color: darkgreen;
+    padding: 5px;
+}
+
+.itemReceta {
+    font-family: 'Tauri', sans-serif;
+    font-size: 15px;
+    color: teal;
+    padding: 5px;
+}
+
+.listaRecetaH {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.setReceta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    padding: 40px;
+}
+
+.recItem {
+    padding: 5px;
+}
+
+.lRecipe {
+    font-family: 'Tauri', sans-serif;
+    font-size: 15px;
+    padding: 2px;
+}
+
+.fRecipe {
+    font-family: 'Tauri', sans-serif;
+    font-size: 13px;
+    padding: 2px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boLogin">
+        <form action="/step/new" method="POST">
+            <div class="setReceta">
+              <div class=recItem>
+              <label class="lRecipe" for="name">Name:</label>
+              <input class="fRecipe" type="text" id="name" name="name" />
+              </div>
+              <div class=recItem>
+              <label class="lRecipe" for="quantity">Quantity:</label>
+              <input class="fRecipe" type="text" id="quantity" name="quantity" /> 
+              </div>
+              <div class=recItem>
+              <label class="lRecipe" for="unit">Unit:</label>
+              <input class="fRecipe" type="text" id="unit" name="unit" />
+              </div>
+              <div class=recItem>
+                <input id="butt" class="fRecipe" type="submit" value="Save"/>
+              </div>
+          </div>
+        </form>
+  </body>
+</html>

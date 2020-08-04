@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
@@ -22,11 +23,27 @@
             </nav>
         </div>
      </div>
-     <div class="divs" id="mainCentral">
-        <nav class="tagsCont">
-            <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Recipes</a></div>
-            <div class="tags"><a href="/prep/<%=user.id%>">My Preparations</a></div>
-        </nav>
+     <div class="divs" id="divRecipes">
+        <form action="/recipe/<%=user.id%>/new" method="POST">
+            <div class="setReceta">
+              <div class="recItem">
+              <label class="lRecipe" for="name">Name:</label>
+              <input class="fRecipe" type="text" id="name" name="name" />
+              </div>
+              <div class="recItem">
+              <label class="lRecipe" for="dificulty">Difficulty:</label>
+              <input class="fRecipe" type="text" id="dificulty" name="dificulty" /> 
+              </div>
+              <div class="recItem">
+              <label class="lRecipe" for="prepTime">Preparation Time:</label>
+              <input class="fRecipe" type="text" id="prepTime" name="prepTime" />
+              </div>
+              <div class="recItem">
+                <input id="butt" class="fRecipe" type="submit" value="Save"/>
+              </div>
+            </div>
+        </form>
+
      </div>
       <div class="divs" id="goodbye">
            <p>Thanks for checking our website :)</p>

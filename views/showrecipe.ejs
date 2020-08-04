@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
@@ -22,10 +23,19 @@
             </nav>
         </div>
      </div>
-     <div class="divs" id="mainCentral">
+     <div class="divs" id="divRecipes">
+          <ol class="">
+            <% recipe.forEach((rec) => { %>
+              <il class="listaReceta">
+                <a class="itemReceta" href="/main/<%=user.id%>/detalle/<%=rec.id%>"><%=rec.id%>.- <%=rec.name.padEnd(45, '_')%></a>
+                <br/><br/>
+                <a class="itemReceta" href="/main/<%=user.id%>/recipeEditAdd/<%=rec.id%>">Edit - Add Ingredients and Steps</a>
+                <!-- <a href="/recipe/<%=user.id%>/edit/<%=rec.id%>">Delete</a> -->
+              </il>
+            <% }); %>
+          </ol>
         <nav class="tagsCont">
-            <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Recipes</a></div>
-            <div class="tags"><a href="/prep/<%=user.id%>">My Preparations</a></div>
+            <div class="tags"><a href="/recipe/<%=user.id%>/new">New Recipe</a></div>
         </nav>
      </div>
       <div class="divs" id="goodbye">

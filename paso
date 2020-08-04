@@ -1,0 +1,46 @@
+        <div class="recItem">
+          <button class="fRecipe" onclick="createIngre()">Create Ingredient</button>
+        </div>
+        <div id="newStep" class="recItem">
+          <button class="fRecipe" onclick="create()">Create Step</button>
+        </div>
+        <script>
+          function createCampo(forma, nombre) {
+            let myLabel = document.createElement('label');
+            forma.appendChild(myLabel);
+            let myInput = document.createElement('input');
+            forma.appendChild(myInput);           
+            myLabel.setAttribute('class', 'lRecipe');
+            myLabel.setAttribute('for', nombre);
+            myInput.setAttribute('class', 'fRecipe');
+            myInput.setAttribute('type', 'text');
+            myInput.setAttribute('id', nombre);
+            myInput.setAttribute('name', nombre);
+          }
+          function createIngre() {
+            let myForm = document.createElement('form');
+            const myDiv =  document.querySelector('#divRecipes');
+            myForm.setAttribute('action', '/ingre/<%=user.id%>/new');
+            myForm.setAttribute('method', 'POST');
+            myDiv.appendChild(myForm);
+
+            createCampo(myForm, 'name');
+            createCampo(myForm, 'quantity');
+            createCampo(myForm, 'unit');
+
+            let myInputButt = document.createElement('input');
+            myForm.appendChild(myInputButt); 
+            myInputButt.setAttribute('class', 'fRecipe');
+            myInputButt.setAttribute('type', 'submit');
+            myInputButt.setAttribute('value', 'Save');
+
+            // <textarea id="w3review" name="w3review" rows="4" cols="50">
+          }
+        </script> 
+
+
+                <div class="tags"><a href="/ingre/profile/<%=user.id%>">Add Ingredientes</a></div>
+        <div class="tags"><a href="/step/profile/<%=user.id%>">Add Steps</a></div>
+
+                        <a href="/ingre/<%=user.id%>/<%=ing.id%>"><%=ing.id%>.- <%=ing.name%></a>
+                <a href="/ingre/<%=user.id%>/edit/<%=ing.id%>">Edit</a>

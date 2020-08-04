@@ -4,6 +4,7 @@ const app = express();
 const methodOverride = require("method-override");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+let USER=null;
 
 const verifyToken = (req, res, next) => {
   let token = req.cookies.jwt;
@@ -35,14 +36,12 @@ app.get("/", (req, res) => {
 app.use("/auth", require("./controllers/authController.js"));
 app.use("/users", require("./controllers/usersController.js"));
 app.use("/main", require("./controllers/mainController.js"));
+app.use("/recipe", require("./controllers/recipeController.js"));
+app.use("/ingre", require("./controllers/ingreController.js"));
 
 app.listen(process.env.PORT, () => {
   console.log("Nodemon listening");
 });
 
 
-
-
-
-//npx sequelize-cli model:generate --name Steps --attributes description:text,recipeId:integer;
 

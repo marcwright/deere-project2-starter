@@ -9,6 +9,7 @@ const UserModel = require("../models").User;
 // SIGN OUT ROUTE
 router.get("/logout", (req, res) => {
   res.clearCookie("jwt");
+  USER=null;
   res.redirect("/");
 });
 
@@ -66,8 +67,19 @@ router.get("/login", (req, res) => {
   res.render("users/login.ejs");
 });
 
+router.get("/login2", (req, res) => {
+  res.render("users/login2.ejs");
+});
+
+router.post("/login2", (req, res) => {
+  res.redirect(`/auth/login2`);
+});
+
 // POST LOGIN
 router.post("/login", (req, res) => {
+  if ( req.body.username === '' || req.body.password === '' ) {
+    res.render("users/notfound.ejs");
+  } else {
   UserModel.findOne({
     where: {
       username: req.body.username,
@@ -98,6 +110,7 @@ router.post("/login", (req, res) => {
       res.render("users/notfound.ejs");
     }
   });
+ }
 });
 
 module.exports = router;
