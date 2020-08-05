@@ -16,6 +16,14 @@ module.exports = (sequelize, DataTypes) => {
       Recipe.hasMany(models.Step, { 
         foreignKey: "recipeId" 
       });
+      Recipe.hasMany(models.Preparation, { 
+        foreignKey: "prepId" 
+      });
+      Recipe.belongsToMany(models.User, { 
+        through: 'Preparation',
+        foreignKey: 'recipeId',
+        otherKey: 'userId'
+      });
     }
   };
   Recipe.init({

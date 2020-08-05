@@ -9,21 +9,31 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       prepId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Preparations', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       ingredientId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Ingredients', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       checked: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       }
     });
   },

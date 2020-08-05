@@ -13,6 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       Ingredient.belongsTo(models.Recipe, { 
         foreignKey: "recipeId" 
       });
+      Ingredient.hasMany(models.prepIngredient, { 
+        as: "ingre",
+        foreignKey: 'ingredientId',
+      });
+      Ingredient.belongsToMany(models.Preparation, { 
+         as: "prepIn",
+         through: 'prepIngredients',
+         foreignKey: 'ingredientId',
+         otherKey: 'prepId',
+       });
     }
   };
   Ingredient.init({

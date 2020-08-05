@@ -9,10 +9,18 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       prepId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Preparations', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       stepId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Steps', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       checked: {
         type: Sequelize.BOOLEAN
@@ -22,11 +30,13 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       }
     });
   },

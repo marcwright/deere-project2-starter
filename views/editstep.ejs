@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/app.css" />
     <title>Cooking Preparations</title>
   </head>
-  <body class="boLogin">
+  <body class="boRecipe">
       <form action="/step/<%=recipe.id%>/<%=step.id%>?_method=PUT" method="POST">
           <div class="setReceta">
             <div class=recItem>
@@ -22,9 +22,19 @@
             </textarea>
             </div>
             <div class=recItem>
-            <input id="butt" class="fRecipe" type="submit" name="" value="Submit Changes" />
+            <input id="butt" class="fRecipe" type="hidden" name="actualiza" value="Submit Changes" />
+            <br/>
+            <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
+                  Update
+            </button>
           </div>
         </div>
+      </form>
+      <form action="/step/<%=recipe.id%>/<%=step.id%>?_method=DELETE" method="POST">
+        <input class="fRecipe" type="hidden" value="DELETE"/>
+        <button type="submit" name="borra" value="DELETE" class="fRecipe">
+            Delete
+        </button>
       </form>
   </body>
 </html>

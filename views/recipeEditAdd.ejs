@@ -31,12 +31,12 @@
           <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Back</a></div>
         </nav>
         <div class="frames">
-          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="100" width="1000" style="border:none;"></iframe>
+          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="60" width="1300" style="border:1px solid teal;"></iframe>
           <% recipe.Ingredients.forEach((ingredient) => { %>
-              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="120" width="1000" style="border:none;"></iframe>            
+              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="1300" style="border:none;"></iframe>            
           <% }); %>
           <% recipe.Steps.forEach((step) => { %>
-            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="120" width="1000" style="border:none;"></iframe>            
+            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="1300" style="border:none;"></iframe>            
           <% }); %>
         </div>
       </div>
@@ -50,10 +50,11 @@
         let myFrame = document.createElement('iframe');
         const myDiv =  document.querySelector('.frames');
         myFrame.setAttribute('src', '/ingre/<%=recipe.id%>/new/');
-        myFrame.setAttribute('height', '120');
-        myFrame.setAttribute('width', '1000');
-        myFrame.setAttribute('style', 'border:none;');
+        myFrame.setAttribute('height', '60');
+        myFrame.setAttribute('width', '1300');
+        myFrame.setAttribute('style', 'border:5px solid black;');
 
+        myFrame.addEventListener("click", removeFrame);
         myDiv.appendChild(myFrame); 
       }
 
@@ -61,11 +62,17 @@
         let myFrame = document.createElement('iframe');
         const myDiv =  document.querySelector('.frames');
         myFrame.setAttribute('src', '/step/<%=recipe.id%>/new/');
-        myFrame.setAttribute('height', '120');
-        myFrame.setAttribute('width', '1000');
-        myFrame.setAttribute('style', 'border:none;');
+        myFrame.setAttribute('height', '100');
+        myFrame.setAttribute('width', '1300');
+        myFrame.setAttribute('style', 'border:5px solid black;');
 
+        myFrame.addEventListener("click", removeFrame);
         myDiv.appendChild(myFrame); 
+      }
+
+      function removeFrame() {
+          event.preventDefault();
+          this.parentNode.removeChild(this)
       }
     </script> 
   </body>

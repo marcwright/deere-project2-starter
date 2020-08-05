@@ -5,7 +5,8 @@
 .boRecipe {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-start; 
+    width: 95% 5%
 }
 
 .header {
@@ -294,3 +295,4 @@ input[type=submit] {
     align-items: left;
     flex-wrap: wrap;
 }
+

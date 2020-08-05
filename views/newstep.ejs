@@ -21,12 +21,13 @@
               </textarea>
               </div>
               <div class=recItem>
-                <input id="butt" class="fRecipe" type="submit" value="Save"/>
+                <input id="butt" class="fRecipe" type="hidden" value="Save"/>
+                <br/>
+                <button type="submit" name="salva" value="Save" class="fRecipe">
+                    Save
+                </button>
               </div>
           </div>
-        </form>
-        <form action="/step/<%=recipe.id; %>?_method=DELETE" method="POST">
-            <input class="button" type="submit" value="DELETE"/>
         </form>
   </body>
 </html>

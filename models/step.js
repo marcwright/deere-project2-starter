@@ -13,6 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       Step.belongsTo(models.Recipe, { 
         foreignKey: "recipeId" 
       });
+      Step.hasMany(models.prepStep, {
+        as: "sps",
+        foreignKey: 'stepId',
+      });
+      Step.belongsToMany(models.Preparation, {
+        as: "stepPre",
+        through: 'prepSteps',
+        foreignKey: 'stepId',
+        otherKey: 'prepId',
+      });
     }
   };
   Step.init({

@@ -9,13 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       date: {
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false,
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Users', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       recipeId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Recipes', key: 'id' },
+        onUpdate: 'cascade',
+        onDelete: 'cascade',
       },
       status: {
         type: Sequelize.BOOLEAN
@@ -25,12 +34,22 @@ module.exports = {
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       }
+    },
+    {
+        indexes: [
+            {
+                unique: true,
+                fields: ['date', 'userId', 'recipeId']
+            }
+        ]
     });
   },
   down: async (queryInterface, Sequelize) => {
