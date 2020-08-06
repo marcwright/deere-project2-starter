@@ -68,7 +68,7 @@ router.get("/:user/detalle/:id", (req, res) => {
     });
 });
 
-router.get("/:user/prep/:recipe/", (req, res) => {
+router.post("/:user/prep/:recipe/", (req, res) => {
     let isFine = true;
     Recipe.findByPk(req.params.recipe, {
         include: [

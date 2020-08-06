@@ -42,6 +42,7 @@ router.get("/:recipe/:id", (req, res) => {
 });
 
 router.put("/:recipe/:id", (req, res) => {
+    req.body.description = req.body.description.trim();
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
         Step.update(req.body, {
             where: { id: req.params.id ,

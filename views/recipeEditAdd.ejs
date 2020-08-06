@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
     <title>Cooking Preparations</title>
   </head>
   <body class="boLogin">
@@ -15,6 +16,7 @@
         <div class="hdivs">
             <h1 class="header">Cooking Preparations</h1>
             <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
+            <h1 class="header2">Recipe</h1>
         </div>
         <div class="hdivs" id="proSingOut">
             <nav class="tagsCont">
@@ -26,28 +28,28 @@
      <div class="divs" id="divRecipes">
        <div class="framesCont">
         <nav class="tagsCont">
-          <button class="tags" onclick="createIng()">New Ingredient</button>
-          <button class="tags" onclick="createStep()">New Step</button>
+          <div id="frames">
+            <button class="mySaveUpd" onclick="createIng()">New Ingredient</button>
+            <br/>
+            <button class="mySaveUpd" onclick="createStep()">New Step</button>
+          </div>
           <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Back</a></div>
         </nav>
         <div class="frames">
-          <form class="abajo" action="/recipe/<%=user.id%>/edit/<%=recipe.id%>?_method=DELETE" method="POST" >
+          <form class="Nueva" action="/recipe/<%=user.id%>/edit/<%=recipe.id%>?_method=DELETE" method="POST" >
+            <a class="mySaveUpd" href="/main/<%=user.id%>/recipeEditAdd/<%=recipe.id%>">Refresh</a>
             <input class="fRecipe" type="hidden" value="DELETE"/>
-            <button type="submit" name="borra" value="DELETE" class="fRecipe">
+            <button class="mySaveUpd" type="submit" name="borra" value="DELETE">
                  Delete the Entire Recipe
             </button>
           </form>
-          <button class="fRecipe">
-              <a href="/main/<%=user.id%>/recipeEditAdd/<%=recipe.id%>">Refresh</a>
-          </button>
-
           <br/>
-          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="60" width="1300" style="border:1px solid teal;"></iframe>
+          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="60" width="900" style="border:1px solid teal;"></iframe>
           <% recipe.Ingredients.forEach((ingredient) => { %>
-              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="1300" style="border:none;"></iframe>            
+              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="900" style="border:none;"></iframe>            
           <% }); %>
           <% recipe.Steps.forEach((step) => { %>
-            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="1300" style="border:none;"></iframe>            
+            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="900" style="border:none;"></iframe>            
           <% }); %>
         </div>
       </div>
@@ -62,7 +64,7 @@
         const myDiv =  document.querySelector('.frames');
         myFrame.setAttribute('src', '/ingre/<%=recipe.id%>/new/');
         myFrame.setAttribute('height', '60');
-        myFrame.setAttribute('width', '1300');
+        myFrame.setAttribute('width', '900');
         myFrame.setAttribute('style', 'border:5px solid black;');
 
         myFrame.addEventListener("click", removeFrame);
@@ -74,7 +76,7 @@
         const myDiv =  document.querySelector('.frames');
         myFrame.setAttribute('src', '/step/<%=recipe.id%>/new/');
         myFrame.setAttribute('height', '100');
-        myFrame.setAttribute('width', '1300');
+        myFrame.setAttribute('width', '900');
         myFrame.setAttribute('style', 'border:5px solid black;');
 
         myFrame.addEventListener("click", removeFrame);

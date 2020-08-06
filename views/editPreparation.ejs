@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
     <title>Cooking Preparations</title>
   </head>
   <body class="boRecipe">
@@ -19,9 +20,13 @@
               <input class="fRecipe" type="hidden" id="recipeId" name="recipeId" value="<%=prep.recipeId%>" />
             </div>
             <div class=recItem>
-              <a class= "lRecipe">Name: <%=prep.Recipe.name%></a>
+              <a class= "lRecipe"><%=prep.Recipe.name%></a>
               <a class= "lRecipe">Dificculty: <%=prep.Recipe.dificulty%></a>
               <a class= "lRecipe">Prep Time: <%=prep.Recipe.prepTime%></a>
+                <input class="lRecipe" type="hidden" name="" value="Submit Changes" />
+                <button class="mySaveUpd" type="submit" name="actualiza" value="Submit Changes">
+                    Update
+                </button>
             </div>
             <div class=recItem>
               <label class="lRecipe" for="unit">Check</label>
@@ -34,12 +39,6 @@
                   <%=prep.comments%>
                 </textarea>
               </div>
-            <div class=recItem>
-              <input class="fRecipe" type="hidden" name="" value="Submit Changes" />
-              <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
-                  Update
-              </button>
-            </div>
           </div>
       </form>
       <script>

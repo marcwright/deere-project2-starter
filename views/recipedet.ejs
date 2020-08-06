@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
     <title>Cooking Preparations</title>
   </head>
   <body class="boLogin">
@@ -15,6 +16,7 @@
         <div class="hdivs">
             <h1 class="header">Cooking Preparations</h1>
             <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
+            <h1 class="header2">Recipe</h1>
         </div>
         <div class="hdivs" id="proSingOut">
             <nav class="tagsCont">
@@ -25,13 +27,18 @@
      </div>
      <div class="divs" id="showOneRecipe">
         <div class="recipeLists" color="black">
+          <form class="recipeLists" action="/main/<%=user.id%>/prep/<%=recipe.id%>" method="POST">
+            <input class="fRecipe" type="hidden" value="SAVE"/>
+            <button class="mySaveUpd" type="submit" name="salva" value="SAVE">
+              Create Preparation
+            </button>
+          </form>
           <nav>
             <div class="itemRecetaH">
-              <a class="tags" href="/main/<%=user.id%>/prep/<%=recipe.id%>">Create Preparation</a>
               <a class="tags" href="/prep/history/<%=user.id%>">Prep History</a>
             </div>
-            </nav>
-          </div>
+          </nav>
+        </div>
           <div class="recipeDesc" class="item">
             <div class="item"><h1 class="headerR"><%=recipe.name%></h1></div>
           </div>
@@ -59,6 +66,7 @@
             <% }); %>
           </ol>
         </div>
+
       </div>
       <div class="divs" id="goodbye">
            <p>Thanks for checking our website :)</p>

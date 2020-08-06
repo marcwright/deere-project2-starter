@@ -48,19 +48,10 @@ body {font-family: "Lato", sans-serif;}
   background-color: #ccc;
 }
 
-/* Style the tab content */
-/* .tabcontent {
-  float: left;
-  padding: 0px 12px;
-  border: 1px solid #ccc;
-  /* width: 60%; */
-  border-left: none;
-  /* height: 300px; */
-} */
 
 .forContent {
     float: left;
     width: 70%; 
     border-left: none;
     /* height: 300px; */
-  }
+}

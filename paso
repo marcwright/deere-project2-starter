@@ -46,3 +46,6 @@
 
                         <a href="/ingre/<%=user.id%>/<%=ing.id%>"><%=ing.id%>.- <%=ing.name%></a>
                 <a href="/ingre/<%=user.id%>/edit/<%=ing.id%>">Edit</a>
+
+
+                              <a class="tags" href="/main/<%=user.id%>/prep/<%=recipe.id%>">Create Preparation</a>

@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
     <title>Cooking Preparations</title>
   </head>
   <body class="boRecipe">
@@ -29,15 +30,15 @@
             </div>
             <div class=recItem>
             <input id="butt" class="fRecipe" type="hidden" name="" value="Submit Changes" />
-            <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
+            <button class="mySaveUpd" type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
                 Update
             </button>
           </div>
         </div>
       </form>
-      <form action="/ingre/<%=recipe.id%>/<%=ingredient.id%>?_method=DELETE" method="POST">
+      <form class="formDelete" action="/ingre/<%=recipe.id%>/<%=ingredient.id%>?_method=DELETE" method="POST">
         <input class="fRecipe" type="hidden" value="DELETE"/>
-        <button type="submit" name="borra" value="DELETE" class="fRecipe">
+        <button class="mySaveUpd" type="submit" name="borra" value="DELETE" class="fRecipe">
             Delete
         </button>
       </form>

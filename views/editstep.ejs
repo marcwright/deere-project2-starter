@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/buttons.css" />
     <title>Cooking Preparations</title>
   </head>
   <body class="boRecipe">
@@ -16,7 +17,7 @@
               <input class="fRecipe" type="hidden"  id="recipeId" name="recipeId" value="<%=recipe.id%>" />
             </div>
             <div class=recItem>
-            <label class="lRecipe" for="description">Description:</label>
+            <label class="lRecipe" for="description">Step:</label>
             <textarea class="fRecipe" id="description" name="description" rows="3" cols="100">
               <%=step.description%>
             </textarea>
@@ -24,7 +25,7 @@
             <div class=recItem>
             <input id="butt" class="fRecipe" type="hidden" name="actualiza" value="Submit Changes" />
             <br/>
-            <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
+            <button class="mySaveUpd" type="submit" name="actualiza" value="Submit Changes" >
                   Update
             </button>
           </div>
@@ -32,7 +33,7 @@
       </form>
       <form action="/step/<%=recipe.id%>/<%=step.id%>?_method=DELETE" method="POST">
         <input class="fRecipe" type="hidden" value="DELETE"/>
-        <button type="submit" name="borra" value="DELETE" class="fRecipe">
+        <button class="mySaveUpd" type="submit" name="borra" value="DELETE" >
             Delete
         </button>
       </form>
