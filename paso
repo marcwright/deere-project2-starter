@@ -49,3 +49,25 @@
 
 
                               <a class="tags" href="/main/<%=user.id%>/prep/<%=recipe.id%>">Create Preparation</a>
+
+
+
+        <form action="/step/<%=recipe.id%>/new" method="POST">
+            <div class="setReceta">
+              <div class=recItem>
+                <input class="fRecipe" type="hidden"  id="recipeId" name="recipeId" value="<%=recipe.id%>" />
+              </div>
+              <div class=recItem>
+              <label class="lRecipe" for="description">Description:</label>
+              <textarea class="fRecipe" id="description" name="description" rows="3" cols="100">
+              </textarea>
+              </div>
+              <div class=recItem>
+                <input id="butt" class="fRecipe" type="hidden" value="Save"/>
+                <br/>
+                <button class="mySaveUpd" type="submit" name="salva" value="Save">
+                    Save
+                </button> 
+              </div>
+          </div>
+        </form>

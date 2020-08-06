@@ -41,7 +41,7 @@ router.delete('/:user/edit/:recipe', (req, res) => {
         Recipe.destroy({ where: { id: req.params.recipe } }).then(() => {
             res.redirect(`/main/${userProfile.id}/recipeMenu`);
         });
-    });
+    }); 
 });
 
 router.get("/:user/new", (req, res) => {
