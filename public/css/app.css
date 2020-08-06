@@ -100,7 +100,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    align-items: center; 
+    /* align-items: initial;  */
     justify-content: center;
 }
 
@@ -272,8 +272,19 @@ input[type=submit] {
     padding: 5px;
 }
 
+setReceta2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
 .recItem {
     padding: 5px;
+}
+.recItem2 {
+    padding: 2px;
 }
 
 .lRecipe {
@@ -290,6 +301,13 @@ input[type=submit] {
 
 
 .framesCont {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    flex-wrap: wrap;
+}
+
+.frames {
     display: flex;
     flex-direction: column;
     align-items: left;

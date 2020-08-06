@@ -17,16 +17,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "recipeId" 
       });
       Recipe.hasMany(models.Preparation, { 
-        foreignKey: "prepId" 
-      });
-      Recipe.belongsToMany(models.User, { 
-        through: 'Preparation',
-        foreignKey: 'recipeId',
-        otherKey: 'userId'
-      });
+          foreignKey: "recipeId" 
+      }); 
     }
   };
   Recipe.init({
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+  },
     name: DataTypes.STRING,
     dificulty: DataTypes.STRING,
     prepTime: DataTypes.STRING

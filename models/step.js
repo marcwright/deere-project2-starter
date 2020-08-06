@@ -14,18 +14,23 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "recipeId" 
       });
       Step.hasMany(models.prepStep, {
-        as: "sps",
-        foreignKey: 'stepId',
-      });
-      Step.belongsToMany(models.Preparation, {
-        as: "stepPre",
-        through: 'prepSteps',
-        foreignKey: 'stepId',
-        otherKey: 'prepId',
-      });
+           //as: "stepPS",
+           foreignKey: 'stepId',
+      }); 
+      // Step.belongsToMany(models.Preparation, { 
+      //   as: "stepPre",
+      //   through: 'prepSteps',
+      //   foreignKey: 'stepId',
+      //   otherKey: 'prepId',
+      // });
     }
   };
   Step.init({
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     description: DataTypes.TEXT,
     recipeId: DataTypes.INTEGER
   }, {

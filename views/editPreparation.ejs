@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boRecipe">
+      <form action="/prep/<%=prep.userId%>/edit/<%=prep.id%>?_method=PUT" method="POST" >
+          <div class="setReceta">
+            <div class=recItem>
+              <input class="fRecipe" type="hidden" id="id" name="id" value="<%=prep.id%>" />
+              <input class="fRecipe" type="hidden" id="prepDate" name="prepDate" value="<%=prep.prepDate%>" />
+              <input class="fRecipe" type="hidden" id="userId" name="userId" value="<%=prep.userId%>" />
+              <input class="fRecipe" type="hidden" id="recipeId" name="recipeId" value="<%=prep.recipeId%>" />
+            </div>
+            <div class=recItem>
+              <a class= "lRecipe">Name: <%=prep.Recipe.name%></a>
+              <a class= "lRecipe">Dificculty: <%=prep.Recipe.dificulty%></a>
+              <a class= "lRecipe">Prep Time: <%=prep.Recipe.prepTime%></a>
+            </div>
+            <div class=recItem>
+              <label class="lRecipe" for="unit">Check</label>
+              <% console.log(prep.status)%>
+              <input class="fRecipe" type="checkbox" id="status" name="status" onchange="setValue()" value="<%=prep.status%>"/>
+              </div>
+              <div class=recItem>
+                <label class="lRecipe" for="comments">Comments:</label>
+                <textarea class="fRecipe" id="comments" name="comments" rows="3" cols="100">
+                  <%=prep.comments%>
+                </textarea>
+              </div>
+            <div class=recItem>
+              <input class="fRecipe" type="hidden" name="" value="Submit Changes" />
+              <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
+                  Update
+              </button>
+            </div>
+          </div>
+      </form>
+      <script>
+          function setValue() {
+             const myButton = document.querySelector('#status');
+              if ( myButton.checked ) {
+                myButton.value = true;
+              } else {
+                myButton.value = false;
+              }
+          }
+
+          function startCheck() {
+             const myButton = document.querySelector('#status');
+              if ( myButton.value == true || myButton.value == 'true' ) {
+                myButton.checked = true;
+              } else {
+                myButton.checked = false;
+              }
+          }
+          startCheck();
+      </script>
+  </body>
+</html>

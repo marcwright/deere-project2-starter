@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <link rel="stylesheet" href="/css/verTab.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boLogin">
+    <div class="main">
+     <div class="divs" id="headDivMain">
+        <div class="hdivs">
+            <h1 class="header">Cooking Preparations</h1>
+            <h5 class="welmes">This site was created to help people to plan their recipes and help them with the preparation.</h5>
+        </div>
+        <div class="hdivs" id="proSingOut">
+            <nav class="tagsCont">
+                <div class="tags"><a href="/users/profile/<%=user.id%>">Profile</a></div>
+                <div class="tags"><a href="/auth/logout">Sing Out</a></div>
+            </nav>
+        </div>
+     </div>
+     <div class="divs" id="divHis">
+         <div class="groupButtons" >
+            <% prep.forEach((prepInfo, index) => { %>
+            <div class="tab">
+                <button class="tablinks" onclick="openPrep(event, '<%=index%>', '<%=user.id%>', '<%=prepInfo.id%>')" id="<%='l'+index%>"><%=prepInfo.prepDate%></button>
+            </div>        
+            <% }); %>
+        </div>
+        <div class="forContent">
+            <div id="content" class="tabcontent">
+                <iframe id="iMain" src="" height="800" width="1300" style="border:none;"></iframe>
+            </div>
+        </div>        
+     </div>
+      <div class="divs" id="goodbye"> 
+           <p>Thanks for checking our website :)</p>
+      </div>
+    </div>
+    <script>
+        function openPrep(evt, index, userId, prepId) {
+          let i, tabcontent, tablinks, frame;
+          tablinks = document.querySelectorAll(".tablinks");
+
+           frame = document.querySelector("#iMain");
+           iMain.setAttribute("src", `/prep/showOne/${userId}/${prepId}`);
+
+
+           tablinks.forEach((tLink) => {
+               tLink.className = tLink.className.replace(" active", "");
+           });
+          document.querySelector(`#l${index}`).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.querySelector("#l0").click();
+    </script> 
+  </body>
+</html>

@@ -8,9 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      date: {
-        type: Sequelize.DATE,
+      prepDate: {
+        type: Sequelize.DATEONLY,
         allowNull: false,
+        defaultValue: new Date(),
       },
       userId: {
         type: Sequelize.INTEGER,
@@ -42,14 +43,6 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: new Date(),
       }
-    },
-    {
-        indexes: [
-            {
-                unique: true,
-                fields: ['date', 'userId', 'recipeId']
-            }
-        ]
     });
   },
   down: async (queryInterface, Sequelize) => {

@@ -39,8 +39,7 @@ router.put("/:user/edit/:recipe", (req, res) => {
 router.delete('/:user/edit/:recipe', (req, res) => {
     UserModel.findByPk(req.params.user).then((userProfile) => {
         Recipe.destroy({ where: { id: req.params.recipe } }).then(() => {
-            res.send('Recipe Deleted');
-            //res.redirect(`/main/${userProfile.id}/recipeMenu`);
+            res.redirect(`/main/${userProfile.id}/recipeMenu`);
         });
     });
 });

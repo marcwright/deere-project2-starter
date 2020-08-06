@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boRecipe">
+      <form action="/prepIngre/<%=prepIngre.prepId%>/<%=prepIngre.id%>?_method=PUT" method="POST">
+          <div class="setReceta">
+            <div class=recItem>
+              <input class="fRecipe" type="hidden"  id="id" name="id" value="<%=prepIngre.id%>" />
+            </div>
+            <div class=recItem>
+              <a class= "lRecipe"><%=prepIngre.Ingredient.name%></a>
+            </div>
+            <div class=recItem>
+              <a class= "lRecipe"><%=prepIngre.Ingredient.quantity%></a>
+            </div>
+            <div class=recItem>
+              <a class= "lRecipe"><%=prepIngre.Ingredient.unit%></a>
+            </div>
+            <!-- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"> -->
+            <div class=recItem>
+            <input class="fRecipe" type="hidden" id="prepId" name="prepId" value="<%=prepIngre.prepId%>" />
+            </div>
+            <div class=recItem>
+            <input class="fRecipe" type="hidden" id="ingredientId" name="ingredientId" value="<%=prepIngre.ingredientId%>" /> 
+            </div>
+            <div class=recItem>
+            <label class="lRecipe" for="unit">Done</label>
+            <input class="fRecipe" type="checkbox" id="checked" name="checked"  onchange="setValue()"  value="<%=prepIngre.checked%>"/>
+            </div>
+            <div class=recItem>
+            <input id="butt" class="fRecipe" type="hidden" name="" value="Submit Changes" />
+            <button type="submit" name="actualiza" value="Submit Changes" class="fRecipe">
+                Update
+            </button>
+          </div>
+        </div>
+      </form>
+      <script>
+        function setValue() {
+           const myButton = document.querySelector('#checked');
+            if ( myButton.checked ) {
+              myButton.value = true;
+            } else {
+              myButton.value = false;
+            }
+        }
+
+        function startCheck() {
+           const myButton = document.querySelector('#checked');
+           console.log(myButton.value);
+            if ( myButton.value == true || myButton.value == 'true' ) {
+              myButton.checked = true;
+            } else {
+              myButton.checked = false;
+            }
+        }
+        startCheck();
+    </script>
+  </body>
+</html>

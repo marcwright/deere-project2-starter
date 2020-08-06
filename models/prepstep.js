@@ -10,15 +10,23 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      prepStep.belongsTo(models.Preparation, { 
-        foreignKey: "prepId" 
-      });
-      prepStep.belongsTo(models.Step, { 
-        foreignKey: "stepId" 
-      });
+     prepStep.belongsTo(models.Preparation, { 
+         foreignKey: "prepId" 
+     });
+    prepStep.belongsTo(models.Step, { 
+        foreignKey: "stepId"  
+    });
+    //   prepStep.hasMany(models.Step, { 
+    //     foreignKey: "stepId" 
+    //  });
     }
   };
   prepStep.init({
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     prepId: DataTypes.INTEGER,
     stepId: DataTypes.INTEGER,
     checked: DataTypes.BOOLEAN,

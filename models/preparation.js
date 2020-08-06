@@ -11,15 +11,22 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Preparation.hasMany(models.prepIngredient, { 
-        as: 'pIngre',
-        foreignKey: 'prepId' });
+          foreignKey: 'prepId' });
       Preparation.hasMany(models.prepStep, { 
-        as: 'pSteps',
-        foreignKey: 'stepId' });
-    }
+          as: 'pSteps',
+          foreignKey: 'prepId' });
+      Preparation.belongsTo(models.Recipe, {
+          foreignKey: 'recipeId' 
+      });
+     }
   };
   Preparation.init({
-    date: DataTypes.DATE,
+    id: {
+          autoIncrement: true,
+          primaryKey: true,
+          type: DataTypes.INTEGER
+      },
+    prepDate: DataTypes.DATE,
     userId: DataTypes.INTEGER,
     recipeId: DataTypes.INTEGER,
     status: DataTypes.BOOLEAN,

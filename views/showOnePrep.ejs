@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tauri&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css" />
+    <title>Cooking Preparations</title>
+  </head>
+  <body class="boLogin">
+       <div class="framesCont">
+        <div class="frames">
+          <iframe src="/prep/<%=prep.userId%>/edit/<%=prep.id%>" height="130" width="1000" style="border:1px solid teal;"></iframe>
+          <% prep.prepIngredients.forEach((ingredient) => { %>
+              <iframe src="/prepIngre/<%=prep.id%>/<%=ingredient.id%>" height="60" width="1000" style="border:none;"></iframe>            
+          <% }); %>
+          <% prep.pSteps.forEach((step) => { %>
+            <iframe src="/prepStep/<%=prep.id%>/<%=step.id%>" height="200" width="1000" style="border:none;"></iframe>            
+          <% }); %>
+        </div>
+      </div>
+    </script> 
+  </body>
+</html>

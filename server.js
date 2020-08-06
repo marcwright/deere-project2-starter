@@ -39,6 +39,9 @@ app.use("/main", require("./controllers/mainController.js"));
 app.use("/recipe", require("./controllers/recipeController.js"));
 app.use("/ingre", require("./controllers/ingreController.js"));
 app.use("/step", require("./controllers/stepController.js"));
+app.use("/prep", require("./controllers/prepController.js"));
+app.use("/prepIngre", require("./controllers/prepIngreController.js"));
+app.use("/prepStep", require("./controllers/prepStepController.js"));
 
 app.listen(process.env.PORT, () => {
   console.log("Nodemon listening");

@@ -14,18 +14,23 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "recipeId" 
       });
       Ingredient.hasMany(models.prepIngredient, { 
-        as: "ingre",
-        foreignKey: 'ingredientId',
+           //as: "ingrePI",
+           foreignKey: 'ingredientId', 
       });
-      Ingredient.belongsToMany(models.Preparation, { 
-         as: "prepIn",
-         through: 'prepIngredients',
-         foreignKey: 'ingredientId',
-         otherKey: 'prepId',
-       });
+      // Ingredient.belongsToMany(models.Preparation, {
+      //    as: "stepIngre",
+      //    through: 'prepIngredients',
+      //    foreignKey: 'ingredientId', 
+      //    otherKey: 'prepId',
+      // });
     }
   };
   Ingredient.init({
+    id: {
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
     name: DataTypes.STRING,
     quantity: DataTypes.NUMERIC,
     unit: DataTypes.STRING,
