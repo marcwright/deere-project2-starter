@@ -11,6 +11,15 @@
   <body class="boLogin">
        <div class="framesCont">
         <div class="frames">
+          <form class="abajo" action="/prep/<%=prep.userId%>/edit/<%=prep.id%>?_method=DELETE" method="POST" >
+            <input class="fRecipe" type="hidden" value="DELETE"/>
+            <button type="submit" name="borra" value="DELETE" class="fRecipe">
+                 Delete the Preparation
+            </button>
+          </form>
+          <button class="fRecipe">
+              <a href="/prep/showOne/<%=prep.userId%>/<%=prep.id%>">Refresh</a>
+          </button>
           <iframe src="/prep/<%=prep.userId%>/edit/<%=prep.id%>" height="130" width="1000" style="border:1px solid teal;"></iframe>
           <% prep.prepIngredients.forEach((ingredient) => { %>
               <iframe src="/prepIngre/<%=prep.id%>/<%=ingredient.id%>" height="60" width="1000" style="border:none;"></iframe>            

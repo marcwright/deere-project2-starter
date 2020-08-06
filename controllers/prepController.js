@@ -94,7 +94,9 @@ router.put("/:user/edit/:prep", (req, res) => {
 router.delete('/:user/edit/:prep', (req, res) => {
     UserModel.findByPk(req.params.user).then((userProfile) => {
         Preparation.destroy({ where: { id: req.params.prep } }).then(() => {
-            res.redirect(`/main/${userProfile.id}/recipeMenu`);
+            //res.redirect(`/prep/history/${userProfile.id}`);
+            res.send('Preparation is deleted');
+            //res.redirect(`/prep/history/${userProfile.id}`);
         });
     });
 });

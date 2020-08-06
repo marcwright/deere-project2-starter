@@ -97,7 +97,8 @@ router.get("/:user/prep/:recipe/", (req, res) => {
                             }).catch((err) => {isFine = false;  console.log('Toy aca');}); 
                 }); 
                 console.log(myCompletePrep.id);
-                res.send('Preparation Created.');
+                //res.send('Preparation Created.');
+                res.redirect(`/prep/history/${req.params.user}`);
                 // res.render("showPreparation.ejs", {
                 //               prep: myCompletePrep,
                 //               prepIngre: wholePrepModel.prepIngredients,
