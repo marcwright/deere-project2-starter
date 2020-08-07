@@ -44,12 +44,15 @@
             </button>
           </form>
           <br/>
-          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="60" width="900" style="border:1px solid teal;"></iframe>
+          <iframe src="/recipe/<%=user.id%>/edit/<%=recipe.id%>" height="60" width="900" style="border:1px solid teal;">
+          </iframe>
           <% recipe.Ingredients.forEach((ingredient) => { %>
-              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="900" style="border:none;"></iframe>            
+              <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="900" style="border:none;">
+              </iframe>            
           <% }); %>
-          <% console.log(step.id); recipe.Steps.forEach((step) => { %>
-            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="900" style="border:none;"></iframe>            
+          <% recipe.Steps.forEach((step) => { %>
+            <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="900" style="border:none;">
+            </iframe>            
           <% }); %>
         </div>
       </div>
