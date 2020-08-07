@@ -34,10 +34,11 @@ router.post("/:recipe/new", (req, res) => {
 router.get("/:recipe/:id", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
         Step.findByPk(req.params.id).then((foundStep) => {
-            res.render("editStep.ejs", {
-                recipe: foundRecipe,
-                step: foundStep,
-            });
+            res.send(foundRecipe + foundStep);
+            // res.render("editStep.ejs", {
+            //     recipe: foundRecipe,
+            //     step: foundStep,
+            // });
         });
     });
 });
