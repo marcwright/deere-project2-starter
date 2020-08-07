@@ -48,7 +48,7 @@
           <% recipe.Ingredients.forEach((ingredient) => { %>
               <iframe src="/ingre/<%=recipe.id%>/<%=ingredient.id%>" height="60" width="900" style="border:none;"></iframe>            
           <% }); %>
-          <% recipe.Steps.forEach((step) => { %>
+          <% console.log(step.id); recipe.Steps.forEach((step) => { %>
             <iframe src="/step/<%=recipe.id%>/<%=step.id%>" height="100" width="900" style="border:none;"></iframe>            
           <% }); %>
         </div>
