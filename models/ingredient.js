@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => { 
   class Ingredient extends Model {
     /**
      * Helper method for defining associations.
@@ -14,15 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "recipeId" 
       });
       Ingredient.hasMany(models.prepIngredient, { 
-           //as: "ingrePI",
            foreignKey: 'ingredientId', 
       });
-      // Ingredient.belongsToMany(models.Preparation, {
-      //    as: "stepIngre",
-      //    through: 'prepIngredients',
-      //    foreignKey: 'ingredientId', 
-      //    otherKey: 'prepId',
-      // });
     }
   };
   Ingredient.init({

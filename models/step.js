@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => { 
   class Step extends Model {
     /**
      * Helper method for defining associations.
@@ -14,15 +14,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "recipeId" 
       });
       Step.hasMany(models.prepStep, {
-           //as: "stepPS",
            foreignKey: 'stepId',
       }); 
-      // Step.belongsToMany(models.Preparation, { 
-      //   as: "stepPre",
-      //   through: 'prepSteps',
-      //   foreignKey: 'stepId',
-      //   otherKey: 'prepId',
-      // });
     }
   };
   Step.init({

@@ -16,9 +16,12 @@ router.use(express.urlencoded({ extended: true }));
 
  router.get("/:recipe/new", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        res.render("newStep.ejs", {
-              recipe: foundRecipe
+        res.render("newIngre.ejs", {
+               recipe: foundRecipe
         }); 
+        // res.render("newStep.ejs", {
+        //       recipe: foundRecipe
+        // }); 
     });
 });
 
@@ -36,7 +39,7 @@ router.get("/:recipe/:id", (req, res) => {
             res.render("editStep.ejs", {
                  recipe: foundRecipe,
                  step: foundStep,
-             });
+             }); 
         });
     });
 });
