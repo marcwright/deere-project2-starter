@@ -16,7 +16,7 @@ router.use(express.urlencoded({ extended: true }));
 
  router.get("/:recipe/new", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
-        res.render("newStep.ejs", {
+        res.render("newSstep.ejs", {
                recipe: foundRecipe
         }); 
         // res.render("newStep.ejs", {
@@ -36,7 +36,7 @@ router.post("/:recipe/new", (req, res) => {
 router.get("/:recipe/:id", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
         Step.findByPk(req.params.id).then((foundStep) => {
-            res.render("editStep.ejs", {
+            res.render("editSstep.ejs", {
                  recipe: foundRecipe,
                  step: foundStep,
              }); 
