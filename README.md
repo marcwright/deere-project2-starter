@@ -2,45 +2,11 @@
 
 ## Set Up
 
-1. Fork and clone this repo
-1. `cd` into the folder and run `npm install`
-1. In the root of your app, `touch .env` and add:
+The application Cooking Preparations is aimed to help you while you want to cook a recipe.
+It allows you to mark your ingredientes when you have them ready. And also keep track of the steps you are doing and check them when you have done.
 
-   ```bash
-   PORT=3000
-   JWT_SECRET=pancakes
-   ```
+- [deployment](https://cooking-preparations.herokuapp.com/)
 
-1. Check out your `config/config.json` file. You'll need to create a database called `project2_development`
-1. Sequelize is included in the app. You have a `User` model. Run `db:migrate` to create the `Users` table in your database.
-1. Run `nodemon` and go to the Homepage: `localhost:3000/`
-
-![](https://i.imgur.com/uuhrOxQ.png)
-
-<br>
-
-## Routes
-
-You have the following routes available.
-
-#### controllers/authController.js
-
-- GET and POST `localhost:3000/auth/signup`
-- GET and POST `localhost:3000/auth/login`
-- GET `localhost:3000/auth/logout`
-
-#### controllers/usersController.js
-
-- GET `localhost:3000/profile/:id`
-
-<br>
-
-## Additional Resources
-
-- [Fruit App Solution](https://git.generalassemb.ly/jdr-0622/fruit-app-in-class)
-- [Pokemon Express Solution](https://git.generalassemb.ly/jdr-0622/pokemon-express-sequelize6)
-- [Google Routes Spreadsheet](https://docs.google.com/spreadsheets/d/14-LHKXLtEkp_vKEz3qSKjREnrmSyzQ9fimTlmrPsZsQ/edit#gid=0)
-- [JSON Web Tokens](https://jwt.io/)
 
 User Stories:
 
