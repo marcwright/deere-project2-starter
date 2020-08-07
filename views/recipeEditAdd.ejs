@@ -35,7 +35,7 @@
           </div>
           <div class="tags"><a href="/main/<%=user.id%>/recipeMenu">Back</a></div>
         </nav>
-        <div class="frames">
+        <div id="frameC" class="frames">
           <form class="Nueva" action="/recipe/<%=user.id%>/edit/<%=recipe.id%>?_method=DELETE" method="POST" >
             <a class="mySaveUpd" href="/main/<%=user.id%>/recipeEditAdd/<%=recipe.id%>">Refresh</a>
             <input class="fRecipe" type="hidden" value="DELETE"/>
@@ -64,7 +64,7 @@
     <script>
       function createIng() {
         let myFrame = document.createElement('iframe');
-        const myDiv =  document.querySelector('.frames');
+        const myDiv =  document.querySelector('#frameC');
         myFrame.setAttribute('src', '/ingre/<%=recipe.id%>/new/');
         myFrame.setAttribute('height', '60');
         myFrame.setAttribute('width', '900');
@@ -76,7 +76,7 @@
 
       function createStep() {
         let myFrame = document.createElement('iframe');
-        const myDiv =  document.querySelector('.frames');
+        const myDiv =  document.querySelector('#frameC');
         myFrame.setAttribute('src', '/step/<%=recipe.id%>/new/');
         myFrame.setAttribute('height', '100');
         myFrame.setAttribute('width', '900');
