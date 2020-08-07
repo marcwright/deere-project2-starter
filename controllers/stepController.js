@@ -34,7 +34,7 @@ router.post("/:recipe/new", (req, res) => {
 router.get("/:recipe/:id", (req, res) => {
     Recipe.findByPk(req.params.recipe).then((foundRecipe) => {
         Step.findByPk(req.params.id).then((foundStep) => {
-            res.send(foundRecipe + foundStep);
+            res.send(foundStep);
             // res.render("editStep.ejs", {
             //     recipe: foundRecipe,
             //     step: foundStep,
